@@ -1,0 +1,519 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================
+   BODY
+========================= */
+
+body {
+
+    width: 100%;
+    min-height: 100vh;
+
+    overflow: hidden;
+
+    font-family: Arial, sans-serif;
+
+    background:
+        radial-gradient(circle at 20% 20%, #fff0f5 0%, transparent 25%),
+        radial-gradient(circle at 80% 80%, #ffc8dc 0%, transparent 30%),
+        #ffdce8;
+
+    color: #333;
+
+}
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.container {
+
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 20px;
+
+    animation: fadeIn 1s ease;
+
+}
+
+/* =========================
+   BEAR
+========================= */
+
+.bear {
+
+    width: 240px;
+
+    max-width: 70vw;
+
+    margin-bottom: 20px;
+
+    animation: floating 3s ease-in-out infinite;
+
+    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.12));
+
+}
+
+/* =========================
+   TITLE
+========================= */
+
+h1 {
+
+    font-size: clamp(32px, 6vw, 55px);
+
+    color: #ff4f8b;
+
+    margin-bottom: 15px;
+
+    text-shadow:
+        0 3px 10px rgba(255, 79, 139, 0.15);
+
+}
+
+/* =========================
+   COUNTER
+========================= */
+
+.counter {
+
+    font-size: 15px;
+
+    color: #777;
+
+    margin-bottom: 25px;
+
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.buttons {
+
+    position: relative;
+
+    width: 360px;
+
+    height: 100px;
+
+    max-width: 90vw;
+
+}
+
+button {
+
+    border: none;
+
+    outline: none;
+
+    padding: 15px 32px;
+
+    border-radius: 15px;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    position: absolute;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+
+}
+
+/* =========================
+   YES BUTTON
+========================= */
+
+#yesBtn {
+
+    left: 25px;
+
+    top: 20px;
+
+    background: #444;
+
+    color: white;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.15);
+
+}
+
+#yesBtn:hover {
+
+    transform: scale(1.1);
+
+    box-shadow:
+        0 12px 25px rgba(255, 79, 139, 0.4);
+
+}
+
+/* =========================
+   NO BUTTON
+========================= */
+
+#noBtn {
+
+    right: 25px;
+
+    top: 20px;
+
+    background: #ff4f8b;
+
+    color: white;
+
+    box-shadow:
+    0 8px 20px rgba(255, 79, 139, 0.3);
+
+    #noBtn:hover{
+        transform: scale(1.1);
+        box-shadow: 0 12px 25px rgba(255, 79, 139, 0.4)
+    }
+
+}
+
+/* =========================
+   ENDING SCREEN
+========================= */
+
+.ending {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: none;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(circle, #fff0f5, #ffd1e0);
+
+    animation: fadeIn 1s ease;
+
+    padding: 20px;
+
+}
+
+.hug-image {
+
+    width: 320px;
+
+    max-width: 80vw;
+
+    margin-bottom: 20px;
+
+    animation: pop 0.9s ease;
+
+    filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.12));
+
+}
+
+.love-text {
+
+    font-size: 20px;
+
+    color: #777;
+
+    margin-top: 5px;
+
+    animation: fadeIn 1.5s ease;
+
+}
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.hearts {
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+}
+
+.heart {
+
+    position: absolute;
+
+    bottom: -50px;
+
+    font-size: 20px;
+
+    animation: heartFloat 5s linear forwards;
+
+    opacity: 0.8;
+
+}
+
+/* =========================
+   CONFETTI
+========================= */
+
+.confetti {
+
+    position: fixed;
+
+    width: 10px;
+
+    height: 10px;
+
+    top: -20px;
+
+    animation: confettiFall 3s linear forwards;
+
+    z-index: 100;
+
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes fadeIn {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(20px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+@keyframes floating {
+
+    0% {
+
+        transform: translateY(0);
+
+    }
+
+    50% {
+
+        transform: translateY(-12px);
+
+    }
+
+    100% {
+
+        transform: translateY(0);
+
+    }
+
+}
+
+@keyframes pop {
+
+    0% {
+
+        transform: scale(0);
+
+    }
+
+    70% {
+
+        transform: scale(1.1);
+
+    }
+
+    100% {
+
+        transform: scale(1);
+
+    }
+
+}
+
+@keyframes heartFloat {
+
+    0% {
+
+        transform:
+            translateY(0) rotate(0deg);
+
+        opacity: 0;
+
+    }
+
+    15% {
+
+        opacity: 1;
+
+    }
+
+    100% {
+
+        transform:
+            translateY(-110vh) rotate(360deg);
+
+        opacity: 0;
+
+    }
+
+}
+
+@keyframes confettiFall {
+
+    0% {
+
+        transform:
+            translateY(0) rotate(0deg);
+
+        opacity: 1;
+
+    }
+
+    100% {
+
+        transform:
+            translateY(110vh) rotate(720deg);
+
+        opacity: 0;
+
+    }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .bear {
+
+        width: 200px;
+
+    }
+
+    .buttons {
+
+        width: 320px;
+
+    }
+
+    button {
+
+        font-size: 18px;
+
+        padding: 13px 25px;
+
+    }
+
+    #yesBtn {
+
+        left: 15px;
+
+    }
+
+    #noBtn {
+
+        right: 15px;
+
+    }
+
+    .hug-image {
+
+        width: 260px;
+
+    }
+
+}
+/* *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:arial;
+}
+body{
+    background: #ffdce7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+    overflow: hidden;
+}
+.container{
+    text-align: center;
+}
+.bear{
+    width: 220px;
+    margin-bottom: 20px;
+}
+h1{
+    font-size: 45px;
+    margin-bottom: 40px;
+}
+.buttons{
+    position: relative;
+    width: 350px;
+    height: 120px;
+    margin: auto;
+}
+button{
+    padding: 15px 35px;
+    font-size: 22px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: .3s;
+    position: absolute;
+}
+#yes{
+    left: 40px;
+    background: #ff4f8b;
+    color: white;
+}
+#yes:hover{
+    transform: scale(1.1);
+}
+#no{
+    right: 40px;
+    background:#444;
+    color: white;
+} */
